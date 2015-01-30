@@ -15,6 +15,8 @@
 #ifndef _Image_h
 #define _Image_h
 
+#include <opencv2/core/core.hpp>
+
 class Image
 {
 public:    
@@ -60,24 +62,30 @@ public:
 		}
         float r, g, b;
     };
-     
+    
+    cv::Mat img;
     Image();
     Image(const char* filename);
-    Image(const unsigned int &_w, const unsigned int &_h, const Pixel &c = Pixel(0));
-	~Image(); 
+//    Image(const unsigned int &_w, const unsigned int &_h, const Pixel &c = Pixel(0));
+	~Image();
 
-    const Pixel& operator [] (const unsigned int &i) const { return pixels[i]; }
-    Pixel& operator [] (const unsigned int &i) { return pixels[i]; }
-
-    unsigned int w, h; // image resolution
-    Pixel *pixels; // 1D array of pixels
+//    const Pixel& operator [] (const unsigned int &i) const { return pixels[i]; }
+//    Pixel& operator [] (const unsigned int &i) { return pixels[i]; }
+//
+//    unsigned int w, h; // image resolution
+//    Pixel *pixels; // 1D array of pixels
     
-    Image& operator+(const Image& other);
+//    Image& operator+(const Image& other);
+//    Image& operator-=(const Image& other);
+//    Image& operator /= (const float& zapper);
+
+    Image operator+(const Image& other);
     Image& operator-=(const Image& other);
-    Image& operator /= (const float& zapper);
+    Image& operator/= (const float& zapper);
+    Image& operator=(const Image& other);
     
-    void readPPM(const char* filename);
-    void savePPM(const char* filename);
+    void read(const char* filename);
+    void save(const char* filename);
 };
 
 #endif //_Image_h

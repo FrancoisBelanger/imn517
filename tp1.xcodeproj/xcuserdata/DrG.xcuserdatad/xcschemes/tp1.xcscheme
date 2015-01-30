@@ -44,7 +44,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/DrG/Desktop/cours/2015/hiv/imn517/tp1/data"
+      customWorkingDirectory = "/Users/DrG/Desktop/cours/2015/hiv/imn517/tp1/imn517/data/fleur"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
